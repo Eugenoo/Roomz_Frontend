@@ -124,10 +124,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "ReservationsComponent"
-}
+<script setup>
+  import {useReservationStore} from "../../stores/ReservationStore.js";
+
+  const store = useReservationStore();
+
 </script>
 
 <style scoped>
