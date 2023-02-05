@@ -126,9 +126,15 @@
 
 <script setup>
   import {useReservationStore} from "../../stores/ReservationStore.js";
+  import {ref} from "vue";
 
   const store = useReservationStore();
 
+  let data = ref({});
+
+  data = store.getData();
+
+  console.log(data);
 </script>
 
 <style scoped>
