@@ -72,13 +72,16 @@
                   </div>
                 </th>
                 <th scope="col" class="py-3 px-6">
-                  Product name
+                  ID
                 </th>
                 <th scope="col" class="py-3 px-6">
-                  Color
+                  Guest ID
                 </th>
                 <th scope="col" class="py-3 px-6">
-                  Category
+                  start
+                </th>
+                <th scope="col" class="py-3 px-6">
+                  end
                 </th>
                 <th scope="col" class="py-3 px-6">
                   Price
@@ -88,7 +91,7 @@
                 </th>
               </tr>
               </thead>
-              <tbody>
+              <tbody v-for="reservation in store.reservation">
               <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td class="p-4 w-4">
                   <div class="flex items-center">
@@ -97,19 +100,24 @@
                   </div>
                 </td>
                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  Apple MacBook Pro 17"
+                  {{ reservation.id }}
                 </th>
                 <td class="py-4 px-6">
-                  Sliver
+                  {{ reservation.guest_id }}
                 </td>
                 <td class="py-4 px-6">
-                  Laptop
+                  {{ reservation.reservation_start }}
+
+                </td>
+                <td class="py-4 px-6">
+                  {{ reservation.reservation_end }}
                 </td>
                 <td class="py-4 px-6">
                   $2999
                 </td>
-                <td class="py-4 px-6">
+                <td class="py-4 px-6 grid gap-1">
                   <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                  <a href="#" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete</a>
                 </td>
               </tr>
               </tbody>
@@ -119,22 +127,22 @@
           <!-- /End replace -->
         </div>
       </main>
-
     </div>
   </div>
 </template>
 
 <script setup>
-  import {useReservationStore} from "../../stores/ReservationStore.js";
-  import {ref} from "vue";
 
-  const store = useReservationStore();
+import {useReservationStore} from "../../stores/ReservationStore.js";
+import {computed, onMounted, ref} from "vue";
 
-  let data = ref({});
+const store = useReservationStore();
+const reservation = ref({});
 
-  data = store.getData();
+onMounted(() => {
+  store.getData();
+})
 
-  console.log(data);
 </script>
 
 <style scoped>
