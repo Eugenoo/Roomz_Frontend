@@ -3,6 +3,8 @@ import Login from "../../views/Login.vue";
 import AdminView from "../../views/Admin/AdminView.vue";
 import Dashboard from "../components/Admin/Dashboard.vue";
 import ReservationsComponent from "../components/Admin/ReservationsComponent.vue";
+import GuestsComponent from "../components/Admin/GuestsComponent.vue";
+import SeasonsComponent from "../components/Admin/SeasonsComponent.vue";
 
 const routes = [
     {
@@ -22,6 +24,16 @@ const routes = [
                 path: 'reservations',
                 name: 'reservations',
                 component: ReservationsComponent
+            },
+            {
+                path: 'guests',
+                name: 'guests',
+                component: GuestsComponent
+            },
+            {
+                path: 'seasons',
+                name: 'seasons',
+                component: SeasonsComponent
             }
         ]
     }
@@ -29,7 +41,8 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
+    linkActiveClass: 'active-link'
 })
 
 export default router;
