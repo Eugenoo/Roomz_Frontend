@@ -5,6 +5,8 @@ import Dashboard from "../components/Admin/Dashboard.vue";
 import ReservationsComponent from "../components/Admin/ReservationsComponent.vue";
 import GuestsComponent from "../components/Admin/GuestsComponent.vue";
 import SeasonsComponent from "../components/Admin/SeasonsComponent.vue";
+import BreakfastComponent from "../components/Admin/BreakfastComponent.vue";
+import RoomsComponent from "../components/Admin/RoomsComponent.vue";
 
 const routes = [
     {
@@ -34,7 +36,18 @@ const routes = [
                 path: 'seasons',
                 name: 'seasons',
                 component: SeasonsComponent
+            },
+            {
+                path: 'breakfast',
+                name: 'breakfast',
+                component: BreakfastComponent
+            },
+            {
+                path: 'rooms',
+                name: 'rooms',
+                component: RoomsComponent
             }
+
         ]
     }
 ]
