@@ -1,12 +1,11 @@
 <template>
-  <navbar-component></navbar-component>
+  <login-component></login-component>
 </template>
 
 <script>
-import NavbarComponent from "../src/components/Admin/Navbar/NavbarComponent.vue";
+import LoginComponent from "../src/components/Login/LoginComponent.vue";
 export default {
-  name: "Login",
-  components: {NavbarComponent}
+  components: {LoginComponent}
 }
 </script>
 

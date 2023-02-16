@@ -10,7 +10,7 @@ import RoomsComponent from "../components/Admin/RoomsComponent.vue";
 
 const routes = [
     {
-        path: '/',
+        path: '/login',
         component: Login
     },
     {
