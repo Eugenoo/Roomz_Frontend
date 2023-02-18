@@ -1,14 +1,14 @@
 <template>
   <div class="flex justify-center content-center">
     <div class="border p-5">
-      <form method="post">
+      <form method="post" @submit.prevent="login">
         <div>
           <label>Login</label>
-          <input v-model="" type="text" class="border rounded-xl ml-5"/>
+          <input v-model="user.email" type="text" class="border rounded-xl ml-5"/>
         </div>
         <div>
           <label>Password</label>
-          <input type="password" class="border rounded-xl ml-5"/>
+          <input v-model="user.password" type="password" class="border rounded-xl ml-5"/>
         </div>
         <button class="btn bg-orange-700 text-white rounded-xl p-2">
           Submit
@@ -19,7 +19,19 @@
 </template>
 
 <script setup>
+  import {useUserStore} from "../../stores/UserStore.js";
 
+  const store = useUserStore();
+  const user = {
+    'email' : '',
+    'password' : '',
+    'token' : ''
+  }
+
+  function login()
+  {
+    store.test(user);
+  }
 </script>
 
 <style scoped>
