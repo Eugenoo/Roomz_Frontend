@@ -10,12 +10,6 @@ export const useReservationStore = defineStore("reservation",  {
     }),
     //actions
     actions : {
-        addOne(){
-            this.counter++
-        },
-        addTwo(){
-            this.counter += 2;
-        },
         getData(){
             axios({
                 method: 'get',
@@ -27,6 +21,9 @@ export const useReservationStore = defineStore("reservation",  {
                 .catch((err) => {
                     console.log(err);
                 })
+        },
+        createReservation(data){
+
         }
     },
     //getters
