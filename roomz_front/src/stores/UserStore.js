@@ -26,7 +26,6 @@ export const useUserStore = defineStore('user', {
                 })
         },
         logout(){
-            console.log(`Bearer`+ sessionStorage.getItem('TOKEN'));
             axios.post('http://localhost:8000/api/logout',{},
                 {
                     headers:{

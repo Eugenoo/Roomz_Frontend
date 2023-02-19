@@ -5,11 +5,22 @@ import {useUserStore} from "./UserStore.js";
 export const useGuestStore = defineStore('guest', {
     //state
     state: () => ({
-        "guest" : null
+        "guest" : {}
     }),
     //actions
     actions: {
-        createGuest(guest) {
+        index(){
+            axios.get('http://localhost:8000/api/guests',{
+                headers : {
+                    Authorization: `Bearer `+ sessionStorage.getItem('TOKEN')
+                }
+            }).then((response) => {
+                this.guest = response.data
+            }).catch((error) => {
+                console.log(error)
+            })
+        }
+        , createGuest(guest) {
             axios.post('http://localhost:8000/api/guest', guest, {
                 headers : {
                     Authorization : "Bearer " + sessionStorage.getItem('TOKEN')
