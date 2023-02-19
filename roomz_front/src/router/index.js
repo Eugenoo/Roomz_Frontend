@@ -72,7 +72,7 @@ router.beforeEach((to, from, next) => {
     const store = useUserStore();
 
     if(to.meta.requiresAuth && !store.$state.isLoggedIn){
-        console.log('1');
+        next('login');
     }
     else if(to.meta.requiresGuest && store.$state.isLoggedIn){
         console.log('2');

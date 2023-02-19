@@ -30,7 +30,7 @@
 
   function login()
   {
-    store.test(user);
+    store.login(user);
   }
 </script>
 
