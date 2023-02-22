@@ -109,11 +109,13 @@ const guest = {
 }
 function createGuest(){
   store.createGuest(guest)
+  store.index()
 }
 
 onMounted(() => {
   store.index()
 })
+
 </script>
 
 <style scoped>
