@@ -12,10 +12,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "RoomsComponent"
-}
+<script setup>
+
 </script>
 
 <style scoped>
