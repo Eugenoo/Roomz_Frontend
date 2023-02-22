@@ -20,7 +20,7 @@ export const useGuestStore = defineStore('guest', {
                 console.log(error)
             })
         }
-        , createGuest(guest) {
+        ,createGuest(guest) {
             axios.post('http://localhost:8000/api/guest', guest, {
                 headers : {
                     Authorization : "Bearer " + sessionStorage.getItem('TOKEN')
@@ -32,6 +32,18 @@ export const useGuestStore = defineStore('guest', {
                 .catch((error) => {
                     console.log(error)
                 })
+        }
+        , deleteGuest(guest) {
+            const url = 'http://localhost:8000/api/guest/' + guest
+             axios.delete(url,{
+                 headers : {
+                     Authorization : "Bearer " + sessionStorage.getItem('TOKEN')
+                 }
+             }).then((response) => {
+                 console.log(response)
+             }).catch((error) => {
+                 console.log(error)
+             })
         }
     }
 })
