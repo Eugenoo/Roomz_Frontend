@@ -108,7 +108,6 @@ import {onMounted} from "vue";
 
 const store = useGuestStore();
 
-
 const guest = {
   'first_name' : null,
   'surname' : null,

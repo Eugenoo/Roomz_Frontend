@@ -134,7 +134,7 @@
 <script setup>
 
 import {useReservationStore} from "../../stores/ReservationStore.js";
-import {computed, onMounted, ref} from "vue";
+import {onMounted} from "vue";
 
 const store = useReservationStore();
 

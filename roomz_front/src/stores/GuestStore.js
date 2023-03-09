@@ -35,7 +35,7 @@ export const useGuestStore = defineStore('guest', {
         }
         , deleteGuest(guest) {
             const url = 'http://localhost:8000/api/guest/' + guest
-             axios.delete(url,{
+            axios.delete(url,{
                  headers : {
                      Authorization : "Bearer " + sessionStorage.getItem('TOKEN')
                  }
