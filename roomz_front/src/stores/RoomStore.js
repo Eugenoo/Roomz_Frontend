@@ -19,8 +19,8 @@ export const useRoomStore = defineStore('room', {
                         console.log(error)
                     })
             },
-            createRoom(room) {
-                axios.post('http://localhost:8000/api/room', room, {
+            createRoom(data) {
+                axios.post('http://localhost:8000/api/room', data , {
                     headers: {
                         Authorization: 'Bearer ' + sessionStorage.getItem('TOKEN')
                     }

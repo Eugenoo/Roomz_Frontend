@@ -2,11 +2,8 @@
   <login-component></login-component>
 </template>
 
-<script>
+<script setup>
 import LoginComponent from "../src/components/Login/LoginComponent.vue";
-export default {
-  components: {LoginComponent}
-}
 </script>
 
 <style scoped>
