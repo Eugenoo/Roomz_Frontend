@@ -88,7 +88,7 @@
                   </td>
                   <td class="py-4 px-6 grid gap-1">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    <button class="btn font-medium text-red-600 dark:text-red-500 hover:underline">Delete</button>
+                    <button @click="deleteRoom(room.id)" class="btn font-medium text-red-600 dark:text-red-500 hover:underline">Delete</button>
                   </td>
                 </tr>
                 </tbody>
@@ -113,6 +113,11 @@ const room = {
 
 function addRoom(){
   store.createRoom(room)
+  store.index()
+}
+
+function deleteRoom(id){
+  store.deleteRoom(id)
   store.index()
 }
 
