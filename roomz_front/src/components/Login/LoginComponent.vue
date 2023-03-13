@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center content-center">
-    <div class="border p-5">
+    <div class="border p-20">
       <form method="post" @submit.prevent="login">
         <div>
           <label>Login</label>
