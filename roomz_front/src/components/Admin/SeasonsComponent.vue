@@ -10,8 +10,16 @@
           <div>
             <Modal @close="toggleModal" :modal-active="modalActive">
               <div class="modal-content">
-                <h1>HGW</h1>
-                <p>This is a modal message</p>
+                <form>
+                  <div>
+                    <label>Season Name</label>
+                    <input type="text" class="border">
+                  </div>
+                  <div>
+                    <label>Multiplier</label>
+                    <input type="text" class="border">
+                  </div>
+                </form>
               </div>
             </Modal>
           </div>
